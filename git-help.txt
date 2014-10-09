@@ -1,0 +1,26 @@
+$end:Path = "C:\Users\prakash\Documents\GitHub\cs5610"
+
+
+
+SOURCE  CODE URL - ssh://542c17bc4382ecc83000018f@cs5610-arulselv.rhcloud.com/~/git/cs5610.git/
+
+
+git add .
+git commit -a -m 'Some commit message'
+git push
+
+
+MongoDB 2.4 database added.  Please make note of these credentials:
+
+   Root User:     admin
+   Root Password: P4RixTjlWRjy
+   Database Name: cs5610
+
+Connection URL: mongodb://$OPENSHIFT_MONGODB_DB_HOST:$OPENSHIFT_MONGODB_DB_PORT/
+
+
+
+Please make note of these MongoDB credentials:
+  RockMongo User: admin
+  RockMongo Password: P4RixTjlWRjy
+URL: https://cs5610-arulselv.rhcloud.com/rockmongo/
