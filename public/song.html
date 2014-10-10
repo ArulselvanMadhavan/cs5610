@@ -1,0 +1,58 @@
+
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width" />
+    <title>Exp 12: Play my songs</title>
+    <link rel="stylesheet" href="libs/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="libs/font-awesome/css/font-awesome.min.css" />
+    <link rel="stylesheet" href="assets/css/style.css" />
+
+</head>
+
+<body data-ng-app="song-app">
+
+    <script type="text/javascript" src="libs/angular/angular.min.js"></script>
+    <script type="text/javascript" src="libs/lodash/dist/lodash.min.js"></script>
+    <script type="text/javascript" src="libs/underscore.string/dist/underscore.string.min.js"></script>
+    <script type="text/javascript" src="app/song.js"></script>
+    <script type="text/javascript" src="app/controller.js"></script>
+    <script type="text/javascript" src="app/services.js"></script>
+    <script type="text/javascript" src="app/filters.js"></script>
+    <script type="text/javascript" src="app/directives.js"></script>
+    <h1>Experiment 12 : Node JS - Fiel Streaming.</h1>
+    <h2>Experiment Demo: </h2>
+
+    <!-- Adding a Controller-->
+    <div ng-controller="song-ctrl">
+        <div class="page-header">
+            <h1>Play my songs</h1>
+            <table class="table table-striped table-condensed">
+                <thead>
+                    <tr>
+                        <th>Songs</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr ng-repeat="song in songs">
+                        <td>
+                            <div class="pull-left">
+                                <strong>{{song.name}}</strong><br />
+                            </div>
+                            <div class="pull-right">
+                                <button type="button" class="btn btn-primary pull-center" ng-click="playsong($value)">
+                                    Play
+                                </button>
+
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+
+        </div>
+    </div>
+</body>
+</html>

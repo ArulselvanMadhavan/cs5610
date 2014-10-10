@@ -1,0 +1,52 @@
+var db = mongojs('admin:P4RixTjlWRjy@cs5610-arulselv.rhcloud.com/rockmongo/cs5610', ["courses"]);
+
+app.get("/songs", function(request,response) {
+	var songname = request.query.song
+    var filePath = path.join(__dirname, songname);
+    var stat = fileSystem.statSync(filePath);
+    
+    response.writeHead(200, {
+        'Content-Type': 'audio/mpeg', 
+        'Content-Length': stat.size
+    });
+    
+    var readStream = fileSystem.createReadStream(filePath);
+    readStream.on('data', function(data) {
+        response.write(data);
+    });
+    
+    readStream.on('end', function() {
+        response.end();        
+    });
+});
+-------------------------------------------------------------------------
+
+
+------------
+
+    var courses = [{
+        number: "CS6140",
+        title: "Machine learning",
+    }, {
+        number: "CS5800",
+        title: "Algorithms",
+    }, {
+        number: "CS5500",
+        title: "Computer Systems",
+    }]
+
+
+
+
+
+
+angular.module("song-app.controllers", []).controller("song-ctrl", function ($scope,$http) {
+
+        $scope.playsong = function (value) {
+        $http.post("/songs",$scope.songs.value);
+    };
+    $http.post("/", $scope.newcourse)
+    $scope.isEmpty = function (str) {
+        return _.isBlank(str);
+    };
+    _.mixin(_.string.exports());
